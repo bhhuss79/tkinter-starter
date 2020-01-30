@@ -1,6 +1,8 @@
 # A starter program for Python with Tkinter
 
 from tkinter import * # import Tkinter library
+from tkinter import ttk
+
 window = Tk()         # Create the application window
 
 # Add a label with the text "Hello"
@@ -35,7 +37,7 @@ from tkinter.ttk import Progressbar
 
 bar = Progressbar(window, length=200, style='black.Horizontal.TProgressbar')
  
-bar['value'] = 70
+bar['value'] = 70 
  
 bar.grid(column=12, row=0)
 
@@ -49,5 +51,13 @@ new_item.add_command(label='New')
 menu.add_cascade(label='File', menu=new_item)
  
 window.config(menu=menu)
+
+
+l1 = Label(text="This is my theme", fg="white", bg="blue")
+l1.grid(column=20, row=20)
+#l2 = tkinter.Label(text="Test", fg="black", bg="white")
+# style = ttk.Style()
+
+# style.configure("BW.TLabel", foreground="black", background="white")
 
 window.mainloop()     # Keep the window open
