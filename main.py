@@ -16,7 +16,7 @@ txt.grid(column=3, row=0)
 
 btn2 = Button(window, text="Click Me")
  
-btn2.grid(column=0, row=5)
+btn2.grid(column=0, row=7)
 btn2 = Button(window, text="This is a button")
  
 btn2.grid(column=0, row=10)
@@ -59,21 +59,30 @@ l1.grid(column=20, row=20)
 # style = ttk.Style()
 
 # style.configure("BW.TLabel", foreground="black", background="white")
-score = 0
 
+score = 0
 def addToScore():
-  message = txt.get()
-  if message == "Jon":
-    lbl['text'] = "go away"
-  else:
-    lbl['text'] = "hello"
+  global score
+  score += 1
+  if score == 50 :
+  print("You Won")
+  lbl['text'] = score
+
+
+
+#word = Hello
+def addToWord():
+  global word
+  #word += Hello 
+  #lbl ['word'] = word
 
 # Add a label with the text "Hello"
 lbl = Label(window, text=score, font=("Arial Bold", 50))
 lbl.grid(column=0, row=0)
 
-btn = Button(window, text="Click", command=addToScore)
-btn.grid(column = 0 , row = 1)
+btn = Button(window, text="Click", command=addToScore,)
+btn2 = Button(window, text="Click", command=addToWord,)
+btn.grid(column = 0 , row = 5)
 
 txt = Entry(window,width=10)
 txt.grid(column=1, row=0)
